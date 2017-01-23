@@ -45,11 +45,11 @@ namespace FizzBuzz
 
         private string GetNumberOrString(int number)
         {
-            if (IsMultiple(number, 5) && IsMultiple(number, 5))
+            if (IsMultiple(number, 3) && IsMultiple(number, 5))
                 return "Fizz Buzz";
             else if (IsMultiple(number, 5))
                 return "Buzz";
-            else if (IsMultiple(number, 5))
+            else if (IsMultiple(number, 3))
                 return "Fizz";
             else
                 return number.ToString();
