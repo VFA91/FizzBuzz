@@ -8,7 +8,7 @@ namespace FizzBuzz
 {
     class Program
     {
-        private const int NUMBEROFNUMBERS = 100;
+        private const int LIMIT = 100;
 
         static void Main(string[] args)
         {
@@ -29,7 +29,7 @@ namespace FizzBuzz
 
         private StringBuilder PrintNumbers(StringBuilder result)
         {
-            for (int i = 1; i <= NUMBEROFNUMBERS; i++)
+            for (int i = 1; i <= LIMIT; i++)
             {
                 result.Append(GetNumberOrString(i) + ",");
             }
@@ -45,29 +45,19 @@ namespace FizzBuzz
 
         private string GetNumberOrString(int number)
         {
-            if (IsMultipleOfFiveAndThree(number))
+            if (IsMultiple(number, 5) && IsMultiple(number, 5))
                 return "Fizz Buzz";
-            else if (IsMultipleOfFive(number))
+            else if (IsMultiple(number, 5))
                 return "Buzz";
-            else if (IsMultipleOfThree(number))
+            else if (IsMultiple(number, 5))
                 return "Fizz";
             else
                 return number.ToString();
         }
 
-        private bool IsMultipleOfThree(int number)
+        private bool IsMultiple(int number, int baseNumber)
         {
-            return number % 3 == 0;
-        }
-
-        private bool IsMultipleOfFive(int number)
-        {
-            return number % 5 == 0;
-        }
-
-        private bool IsMultipleOfFiveAndThree(int number)
-        {
-            return number % 3 == 0 && number % 5 == 0;
+            return number % baseNumber  == 0;
         }
     }
 }
